@@ -8,6 +8,7 @@ exports.signup = (req, res) =>{
             message: 'User already exists'
         });
     } 
+    //to add new user
         const {
             firstName,
             lastName,
