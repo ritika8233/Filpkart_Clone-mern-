@@ -1,5 +1,4 @@
 const User = require('../models/user');
-const { model } = require("mongoose");
 
 exports.signup = (req, res) =>{
     User.findOne({email: req.body.email})
@@ -8,7 +7,7 @@ exports.signup = (req, res) =>{
             return res.status(400).json({
             message: 'User already exists'
         });
-    }
+    } 
         const {
             firstName,
             lastName,
