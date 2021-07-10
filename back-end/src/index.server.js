@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 
 const userRoutes = require('./routes/auth');
-
+const adminRoutes = require('./routes/admin/auth');
 env.config();
 
 const app = express();
@@ -20,6 +20,7 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO
 
 app.use(bodyParser());
 app.use('/api', userRoutes);
+app.use('/api', adminRoutes);
 
 /*app.get('/',(req, res, next) => {
    res.status(200).json({
